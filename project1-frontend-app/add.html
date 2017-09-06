@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="js/addMarker.js"></script>
+</head>
+<body>
+    <main>
+        <h1>おすすめの場所追加</h1>
+        <div id="map"></div>
+        <form name="placeInfo" class="form" method="post" action="addJson.php">
+            <input type="text" id="textAdd" name="placeName">:場所名</input><br />
+            <select name="jsonType">
+                <option value="">ジャンル選択</option>
+                <option value="グルメ">グルメ</option>
+                <option value="観光">観光</option>
+                <option value="レジャー">レジャー</option>
+                <option value="宿泊">宿泊</option>
+                <option value="ショッピング">ショッピング</option>
+            </select><br />
+            <input type="text" id="placeComment" name="jsonComment" value="" />:コメント</input>
+            <input type="submit" onclick = "methodAdd()" value = "追加"></input>
+            <input type="hidden" id="placeLat" name="jsonLat" value="" />
+            <input type="hidden" id="placeLng" name="jsonLng" value="" />
+        </form>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeQViLCfmM6Z_S9I9IChQL04Hw-m-aLv4&callback=initMap">
+        </script>
+    </main>
+</body>
+</html>
